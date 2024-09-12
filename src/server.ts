@@ -14,7 +14,8 @@ import bootPlayground from './middlewares/bootPlayground';
 const httpServer = createServer();
 const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
   cors: {
-    origin: 'https://termify-frontend.vercel.app',
+    origin: process.env.CLIENT_DOMAIN || 'http://localhost:5173',
+
     allowedHeaders: ['authorization'],
     credentials: true,
   },
