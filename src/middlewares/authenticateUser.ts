@@ -15,7 +15,7 @@ const authenticateUser: ConnectionMiddleware = (socket, next) => {
     }
   } catch (err) {
     console.log('Error aagaya');
-    next(new Error(`Server Error ${err} 😭`));
+    next(new Error(`Server Error ${err} `));
   }
 };
 

@@ -25,8 +25,7 @@ const bootPlayground: ConnectionMiddleware = async (socket, next) => {
     }
   } catch (err) {
     socket.emit('playground:boot', { status: StatusMessageMap.ERROR, message: 'Crash', path: '' });
-    console.log('Abe yaar');
-    next(new Error(`Server Error ${err} lol haha`));
+    next(new Error(`Server Error ${err}`));
   }
 };
 
