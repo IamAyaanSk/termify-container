@@ -2,35 +2,35 @@
 
 # Update and upgrade the package list
 echo "Updating and upgrading the package list..."
-sudo apt update -y && sudo apt upgrade -y
+apt update -y && apt upgrade -y
 
 # Install necessary packages
 echo "Installing required packages..."
-sudo apt-get install -y ca-certificates curl gnupg --no-install-recommends 
+apt-get install -y ca-certificates curl gnupg --no-install-recommends 
 
 # Create a directory for apt keyrings
 echo "Creating keyrings directory..."
-sudo mkdir -p /etc/apt/keyrings
+mkdir -p /etc/apt/keyrings
 
 # Add NodeSource GPG key
 echo "Adding NodeSource GPG key..."
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 
 # Add Node.js repository
 echo "Adding Node.js repository..."
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
 
 # Update package list again to include Node.js repository
 echo "Updating package list..."
-sudo apt update -y
+apt update -y
 
 # Install Node.js, Git, Make, Python3, and Build-essential packages
 echo "Installing Node.js, Git, Make, Python3, and Build-essential..."
-sudo apt-get install -y nodejs git make python3 build-essential --no-install-recommends 
+apt-get install -y nodejs git make python3 build-essential --no-install-recommends 
 
 # Install pnpm globally
 echo "Installing pnpm..."
-sudo npm install -g pnpm
+npm install -g pnpm
 
 # Set environment variables
 echo "Setting environment variables for pnpm..."
@@ -51,11 +51,11 @@ pnpm install && pnpm build
 
 # Create a new user without password
 echo "Creating new user 'damner'..."
-sudo adduser damner --disabled-password --gecos ""
+adduser damner --disabled-password --gecos ""
 
 # Switch to the new user
 echo "Switching to new user 'damner'..."
-sudo su - damner << 'EOF'
+su - damner << 'EOF'
 
 # Create a code directory
 echo "Creating code directory for 'damner' user..."
@@ -72,7 +72,7 @@ EOF
 
 # Change back to the root user
 echo "Switching back to root user..."
-sudo su - root
+su - root
 
 # Change to the server directory
 echo "Changing to server directory..."
