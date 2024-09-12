@@ -20,6 +20,7 @@ const bootPlayground: ConnectionMiddleware = async (socket, next) => {
       startWatchingFilesAndFolders(socket);
 
       ptyProcessInstance.write('su damner\n');
+      ptyProcessInstance.write('skip-password\n');
       ptyProcessInstance.write('clear\n');
       next();
     }
