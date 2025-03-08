@@ -1,10 +1,10 @@
 interface IFileAndFolderDetails {
-  name: string;
-  type: FileAndFolderType;
-  event: FileAndFolderEvent;
-  path: string;
-  newName?: string;
-  content?: string;
+  name: string
+  type: FileAndFolderType
+  event: FileAndFolderEvent
+  path: string
+  newName?: string
+  content?: string
 }
 
 enum FileAndFolderEvent {
@@ -21,4 +21,4 @@ enum FileAndFolderType {
   FOLDER = 'folder',
 }
 
-export { IFileAndFolderDetails, FileAndFolderEvent, FileAndFolderType };
+export { IFileAndFolderDetails, FileAndFolderEvent, FileAndFolderType }

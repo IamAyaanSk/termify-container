@@ -12,20 +12,25 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.6",
+    "@tsconfig/recommended": "^1.0.8",
     "@types/cors": "^2.8.17",
-    "@types/jsonwebtoken": "^9.0.6",
-    "eslint": "^9.3.0",
-    "nodemon": "^3.1.1",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
+    "@types/jsonwebtoken": "^9.0.9",
+    "eslint": "^9.21.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "jsonwebtoken": "^9.0.2",
     "node-pty": "^1.0.0",
-    "socket.io": "^4.7.5",
+    "socket.io": "^4.8.1",
     "ts-node": "^10.9.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "node-pty"
+    ]
   }
 }

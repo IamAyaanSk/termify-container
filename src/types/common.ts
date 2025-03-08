@@ -20,11 +20,11 @@ enum SuccessMessageMap {
 // This is a hack to extend the JwtPayload interface from jsonwebtoken
 declare module 'jsonwebtoken' {
   export interface JwtPayload {
-    s3SignedGetURL?: string;
-    s3SignedPutURL?: string;
-    preBootCommand: string;
-    isFirstTimeBootingFromThisS3Bucket?: boolean;
+    s3SignedGetURL?: string
+    s3SignedPutURL?: string
+    preBootCommand: string
+    isFirstTimeBootingFromThisS3Bucket?: boolean
   }
 }
 
-export { StatusMessageMap, ErroMessageMap, SuccessMessageMap };
+export { StatusMessageMap, ErroMessageMap, SuccessMessageMap }
